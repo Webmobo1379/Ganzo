@@ -1,18 +1,9 @@
-from telegram.ext import Updater, CommandHandler
-import os
-
-def start(update, context):
-    update.message.reply_text("سلام! به ربات خوش آمدید 👋")
+from telegram.ext import Updater
 
 def main():
-    updater = Updater("7717521795:AAFC65Hb0CLAGGYiRiEoZcUSaK8JjjZeuFA", use_context=True)
-    dp = updater.dispatcher
-    dp.add_handler(CommandHandler("start", start))
+    updater = Updater("7717521795:AAFC65Hb0CLAGGYiRiEoZcUSaK8JjjZeuFA")
     updater.start_polling()
     updater.idle()
 
 if __name__ == '__main__':
     main()
-import os
-from dotenv import load_dotenv
-load_dotenv()
