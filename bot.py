@@ -1,9 +1,9 @@
-from telegram.ext import Updater
+import telebot
 
-def main():
-    updater = Updater("7717521795:AAFC65Hb0CLAGGYiRiEoZcUSaK8JjjZeuFA")
-    updater.start_polling()
-    updater.idle()
+bot = telebot.TeleBot('7717521795:AAFC65Hb0CLAGGYiRiEoZcUSaK8JjjZeuFA')
 
-if __name__ == '__main__':
-    main()
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    bot.reply_to(message, "سلام! به ربات خوش آمدید 👋")
+
+bot.polling()
